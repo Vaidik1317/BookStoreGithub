@@ -14,7 +14,7 @@ const ShowBook = () => {
     const fetchBook = async () => {
       setLoading(true);
       try {
-        const response = await axios.get(`http://localhost:5555/books/${id}`);
+        const response = await axios.get(`https://bookstoregithub.onrender.com/books/${id}`);
         setBook(response.data.book || {}); // Use response.data.book if the backend sends { book: {...} }
       } catch (error) {
         console.error("Error fetching book data:", error);

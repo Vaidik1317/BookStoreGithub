@@ -17,7 +17,7 @@ const EditBook = () => {
     const fetchBook = async () => {
       setLoading(true);
       try {
-        const response = await axios.get(`http://localhost:5555/books/${id}`);
+        const response = await axios.get(`https://bookstoregithub.onrender.com/books/${id}`);
         const book = response.data.book; // Assuming response structure is { book: {...} }
         setTitle(book.title);
         setAuthor(book.author);
@@ -42,7 +42,7 @@ const EditBook = () => {
     };
     setLoading(true);
     try {
-      await axios.put(`http://localhost:5555/books/${id}`, data);
+      await axios.put(`https://bookstoregithub.onrender.com/books/${id}`, data);
       alert("Book updated successfully!");
       navigate("/"); // Navigate to home or desired page after update
     } catch (error) {
